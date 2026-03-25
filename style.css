@@ -1,0 +1,534 @@
+/* ============================================
+   ESQUEMA DE CORES MODERNO
+   #0B0C10 - Background escuro
+   #1F2833 - Cinza escuro
+   #C5C6C7 - Cinza claro (texto)
+   #66FCF1 - Ciano (destaque)
+   #45A29E - Verde-azulado (complementar)
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #c5c6c7;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #1f2833;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid #45a29e;
+}
+
+/* ============================================
+   HEADER E FOOTER
+   ============================================ */
+
+header {
+  background: linear-gradient(135deg, #45a29e 0%, #66fcf1 100%);
+  color: #0b0c10;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(102, 252, 241, 0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #45a29e;
+  color: #c5c6c7;
+  font-size: 14px;
+}
+
+/* ============================================
+   BOTÃO VOLTAR AO INÍCIO
+   ============================================ */
+
+.btn-voltar-inicio {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #66fcf1 0%, #45a29e 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(102, 252, 241, 0.4);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-voltar-inicio.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-voltar-inicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(102, 252, 241, 0.6);
+}
+
+/* ============================================
+   BOTÃO VOLTAR INLINE (Em cada página)
+   ============================================ */
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #66fcf1 0%, #45a29e 100%);
+  color: #0b0c10;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 252, 241, 0.3);
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 252, 241, 0.5);
+}
+
+.btn-voltar:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .btn-voltar-inicio {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+/* ============================================
+   MENSAGENS
+   ============================================ */
+
+.mensagem {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+  border-left: 4px solid;
+}
+
+.mensagem.sucesso {
+  background-color: rgba(102, 252, 241, 0.1);
+  color: #66fcf1;
+  border-left-color: #66fcf1;
+}
+
+.mensagem.erro {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #ff6b6b;
+  border-left-color: #ff6b6b;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   FORMULÁRIOS
+   ============================================ */
+
+.formulario-section {
+  background-color: #0b0c10;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border-left: 4px solid #66fcf1;
+}
+
+.formulario-section h2 {
+  color: #66fcf1;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.formulario {
+  display: grid;
+  gap: 15px;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grupo label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #c5c6c7;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+  padding: 12px 15px;
+  border: 2px solid #45a29e;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #1f2833;
+  color: #c5c6c7;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+  color: #c5c6c7;
+  opacity: 0.6;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: #66fcf1;
+  box-shadow: 0 0 0 3px rgba(102, 252, 241, 0.2);
+}
+
+.form-grupo input:disabled {
+  background-color: #0b0c10;
+  color: #c5c6c7;
+  opacity: 0.5;
+}
+
+.form-acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #66fcf1 0%, #45a29e 100%);
+  color: #0b0c10;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 252, 241, 0.4);
+}
+
+.btn-editar {
+  background-color: #45a29e;
+  color: #0b0c10;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-editar:hover {
+  background-color: #66fcf1;
+  transform: translateY(-2px);
+}
+
+.btn-excluir {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-excluir:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+.btn-cancelar {
+  background-color: #c5c6c7;
+  color: #0b0c10;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+.btn-cancelar:hover {
+  background-color: #66fcf1;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   LISTAGEM / TABELAS
+   ============================================ */
+
+.listagem-section {
+  background-color: #0b0c10;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 4px solid #45a29e;
+}
+
+.listagem-section h2 {
+  color: #66fcf1;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.tabela-responsiva {
+  overflow-x: auto;
+}
+
+.tabela-clientes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.tabela-clientes thead {
+  background-color: #1f2833;
+}
+
+.tabela-clientes th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #66fcf1;
+  border-bottom: 2px solid #45a29e;
+}
+
+.tabela-clientes td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #1f2833;
+  color: #c5c6c7;
+}
+
+.tabela-clientes tbody tr {
+  transition: all 0.3s ease;
+}
+
+.tabela-clientes tbody tr:hover {
+  background-color: #1f2833;
+  box-shadow: inset 0 0 10px rgba(102, 252, 241, 0.1);
+}
+
+.tabela-clientes .acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.sem-dados {
+  text-align: center;
+  padding: 30px;
+  color: #c5c6c7;
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+.total-clientes {
+  text-align: right;
+  color: #c5c6c7;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+/* ============================================
+   CONFIRMAÇÃO DE EXCLUSÃO
+   ============================================ */
+
+.confirmacao-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.confirmacao-box {
+  background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+  border: 2px solid #66fcf1;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(102, 252, 241, 0.2);
+}
+
+.confirmacao-box h2 {
+  color: #66fcf1;
+  margin-bottom: 15px;
+}
+
+.confirmacao-box p {
+  color: #c5c6c7;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.cliente-info {
+  background-color: #1f2833;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+  text-align: left;
+  border-left: 3px solid #45a29e;
+}
+
+.cliente-info p {
+  margin: 8px 0;
+  color: #c5c6c7;
+}
+
+.aviso {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+  border-left: 3px solid #ff6b6b;
+}
+
+.formulario-confirmacao {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ============================================
+   CARDS E INFO
+   ============================================ */
+
+.card-info {
+  background: linear-gradient(135deg, #1f2833 0%, #45a29e 100%);
+  color: #0b0c10;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #66fcf1;
+}
+
+.card-info h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+.card-info .numero {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #0b0c10;
+}
+
+.dashboard {
+  color: #c5c6c7;
+}
+
+.dashboard h2 {
+  color: #66fcf1;
+  margin-bottom: 25px;
+}
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .tabela-clientes {
+    font-size: 0.9rem;
+  }
+
+  .tabela-clientes th,
+  .tabela-clientes td {
+    padding: 10px;
+  }
+
+  .tabela-clientes .acoes {
+    flex-direction: column;
+  }
+
+  .tabela-clientes .btn {
+    width: 100%;
+  }
+
+  .form-acoes {
+    flex-direction: column;
+  }
+
+  .form-acoes .btn {
+    width: 100%;
+  }
+
+  .formulario-confirmacao {
+    flex-direction: column;
+  }
+
+  .formulario-confirmacao .btn {
+    width: 100%;
+  }
+}
