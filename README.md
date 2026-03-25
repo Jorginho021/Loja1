@@ -1,3 +1,62 @@
+#Commit:🛠️ Atualizações e Melhorias no Sistema
+
+Durante o desenvolvimento do site, foram implementadas diversas melhorias e novas funcionalidades para tornar o sistema mais completo, organizado e funcional.
+
+🔄 Implementação do CRUD Completo
+
+Foi finalizada a implementação do CRUD (Create, Read, Update, Delete), incluindo:
+
+✅ Criar (Create) – Cadastro de novos dados no sistema
+👁️ Visualizar (Read) – Exibição das informações cadastradas
+✏️ Editar (Update) – Atualização de dados existentes
+❌ Excluir (Delete) – Remoção de registros
+🎯 Funcionalidades Adicionadas
+Botão Excluir
+Botão Editar
+Botão Visualizar
+Botão Voltar ao início
+
+Esses botões melhoram a navegação e a usabilidade do sistema.
+
+🧱 Estrutura e Organização
+Implementação da camada DAO (Data Access Object) para melhor separação de responsabilidades
+Organização do código seguindo boas práticas
+📄 Documentação Criada
+
+Foram adicionados arquivos importantes para facilitar o uso e entendimento do projeto:
+
+📘 documentacao.md – Explicação geral do sistema
+📗 guia.md – Guia de uso para o usuário
+⚙️ install.md – Passo a passo para instalação do projeto
+🗺️ mapa.sistema – Estrutura e organização do sistema
+🔧 Outras Atualizações
+Melhorias no layout e nos botões
+Ajustes gerais no sistema
+Organização de arquivos e código
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 📘 Projeto Loja — CRUD de Clientes com PHP (PDO)
 
 Este projeto é um sistema simples de cadastro de clientes utilizando **PHP orientado a objetos**, **PDO** e **MySQL**, com foco em organização de código e segurança.
